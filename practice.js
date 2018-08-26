@@ -91,12 +91,17 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 //Code Here
 function evenFinder(nums){
-  return nums.filter(function(val){
-    return val % 2 === 0
+  var evens = []
+  
+  nums.forEach(function(val){
+    if(val % 2 === 0){
+      evens.push(val)
+    }
   })
+  return (evens)
   }  
 
-
+evenFinder(nums);
 
 
 

@@ -135,14 +135,14 @@ function divider(numbersArray){
     if(num % 2 === 0){
       evens.push(num);
     } 
-      else if (!num % 2 === 0){
+      else if (num % 2 !== 0){
         odds.push(num);
       }
-      return ([[evens],[odds]]);
     })
+    return ([evens,odds]);
 }
 
-
+divider(numbersArray);
 
 ////////// PROBLEM 7 //////////
 
@@ -162,7 +162,20 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+function finder(arr){
+  const random = getRandomArbitrary();
+  var results = false;
+  for(var i = 0;i<arr.length;i++){
+    if(arr === undefined || arr[i] !== random) {
+      results = false;
+    }
 
+    if(arr[i] === random){
+      results = true;
+    }
+  }
+  return results;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -193,6 +206,24 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Code Here
 
 
+function removeItem(myGroceryList,item){
+  if(!myGroceryList || !item){
+    return [];
+  }
+  
+  return myGroceryList.filter(listItem => listItem !== item )
+}
+
+function addItem(myGroceryList,item){
+  if(!myGroceryList || !item){
+    return [];
+  }
+  if (!myGroceryList.includes(item)) {
+    myGroceryList.push(item)
+  }
+  return myGroceryList;
+}
+
 
 ////////// PROBLEM 9 //////////
 
@@ -201,7 +232,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  const count = []
+  for(let i = 1;i<=215;i++){
+    count.push(i);
+  }
+  return count;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -217,6 +254,10 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
+function addTen(numbers){
+  return numbers.map(num => Number(num) + 10)
+}
+
 
 
 
@@ -242,7 +283,9 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  return arr1 > arr2 ? arr1 : arr2;
+}
 
 
 /*
@@ -254,8 +297,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
-
+function both(arr1, arr2){
+  return arr1.filter(a1 => {
+    if (arr2.includes(a1)) {
+      return a1;
+    }
+  })
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -294,6 +342,12 @@ var colt = {
 */
 
 //Code Here
+    devMountainEmployees.push(tyler,cahlan,ryan,colt)
+    console.log(devMountainEmployees.length)
+  
+
+
+
 
 
 
@@ -305,6 +359,13 @@ var colt = {
 //Code Here
 
 
+devMountainEmployees = devMountainEmployees.filter(item => { 
+      return item !== cahlan;
+      
+    })
+
+console.log(devMountainEmployees.length)
+
 
 ////////// PROBLEM 13 //////////
 
@@ -315,8 +376,7 @@ var colt = {
 */
 
 //Code Here
-
-
+var users = []
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
@@ -334,7 +394,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+user2 = {
+  name: "Leah",
+  email: "leah@gmail.com",
+  password: "password",
+  username: "leahH"
+};
 
+user3 = {
+  name: "Ann",
+  email: "ann@gmail.com",
+  password: "password2",
+  username: "annM"
+};
+
+users.push(user1,user2,user3)
 
 
 /*
@@ -348,7 +422,12 @@ var user1 = {
 */
 
 //Code Here
-
+users = users.filter((obj) => {
+if(obj.email !== "tylermcginnis33@gmail.com"){
+  return obj;
+}
+console.log(users)
+})
 
 
 /*
